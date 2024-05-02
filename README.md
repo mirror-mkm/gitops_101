@@ -46,12 +46,11 @@ You can login to Docker by using CLI command and encode that credentials content
 
 	$ docker login -u username
 	$ cat ~/.docker/config.json 
-	$ base64  ~/.docker/config.json
+	Copy that "auth":"xxxxxxxxxx" part to put in secret.
  
 you can also check this secret configuration in this path 
-"helms/python-flask-project/templates/image-pull-secret.yaml"
- 
-
+"helms/python-flask-project/templates/image-pull-secret.yaml" . 
+Secret's dockerconfigjson data session will be in the format of {auths:{https://index.docker.io/v1/:{username:dockerusername,password:yourpassword,email:youremail@gmail.com,auth:copied-auth-part}}}
 
 Now , python-flask application can be deployed on ArgoCD.
 
