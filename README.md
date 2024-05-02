@@ -53,5 +53,5 @@ you can also check this secret configuration in this path
  
 
 
-Now , my python-flask application can be deployed on ArgoCD.
+Now , python-flask application can be deployed on ArgoCD.
 
