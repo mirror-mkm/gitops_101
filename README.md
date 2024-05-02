@@ -39,15 +39,19 @@ Copy the password and decode it with base64 utility:
  
 Now, you can login to ArgoCD UI.
 
-Step 4: Python Flask App will be deployed via Helm charts on minikube by using ArgoCD.(Note:To pull an image from private registry, you have to set image pull secret of your docker hub access.)
+Step 4: Python Flask App will be deployed via Helm charts on minikube by using ArgoCD.
+Next,set up values.yaml,deployments.yaml,image-pull-secret.yaml files.
+(Note:To pull an image from private registry, you have to set image pull secret of your docker hub access.)
 You can login to Docker by using CLI command and encode that credentials contents with base64 utility.Use that encoded docker config to create a secret.
 
 	$ docker login -u username
 	$ cat ~/.docker/config.json 
 	$ base64  ~/.docker/config.json
  
-you can also check this secret configuration in this path - helms/python-flask-project/templates/image-pull-secret.yaml
-Next,set up values.yaml,deployments.yaml,image-pull-secret.yaml
+you can also check this secret configuration in this path 
+"helms/python-flask-project/templates/image-pull-secret.yaml"
+ 
+
 
 Now , my python-flask application can be deployed on ArgoCD.
 
